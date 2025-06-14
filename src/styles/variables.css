@@ -1,0 +1,17 @@
+:root {
+  --primary-dark: #0a0a1a; /* Cor mais escura para o fundo */
+  --secondary-dark: #1a1a2e;
+  --accent-purple: #b56aff;
+  --accent-red: #e94560;
+  --text-light: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.85);
+  --section-padding: 3rem 1rem;
+  --max-content-width: 1400px;
+  --border-width: 1px;
+}
+body {
+  background-color: var(--primary-dark) !important; /* Garante fundo escuro */
+  margin: 0;
+  padding: 0;
+  color: var(--text-light);
+}

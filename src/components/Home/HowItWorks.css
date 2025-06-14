@@ -1,0 +1,261 @@
+.how-it-works {
+  position: relative;
+  padding: 6rem 2rem;
+  background: 
+    linear-gradient(rgba(15, 7, 26, 0.95), rgba(15, 7, 26, 0.95)),
+    url('https://i.imgur.com/JXQ2z9T.jpg') center/cover fixed;
+  color: white;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #b56aff, #e94560);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #b56aff, #e94560);
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.steps-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #b56aff 20%,
+    #e94560 80%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.step-card {
+  position: relative;
+  width: calc(50% - 60px);
+  margin-bottom: 4rem;
+  background: rgba(35, 20, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(106, 44, 173, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.step-card.left {
+  margin-right: auto;
+  text-align: right;
+}
+
+.step-card.right {
+  margin-left: auto;
+  text-align: left;
+}
+
+.step-icon-container {
+  position: absolute;
+  top: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  background: rgba(35, 20, 59, 0.8);
+}
+
+.step-card.left .step-icon-container {
+  right: -80px;
+}
+
+.step-card.right .step-icon-container {
+  left: -80px;
+}
+
+.step-icon {
+  font-size: 1.8rem;
+}
+
+.step-content {
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  font-size: 3rem;
+  font-weight: 800;
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.step-card.left .step-number {
+  right: 0;
+}
+
+.step-card.right .step-number {
+  left: 0;
+}
+
+.step-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: white;
+}
+
+.step-content p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.final-step {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+.final-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(233, 69, 96, 0.2);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: #e94560;
+  border: 3px solid rgba(233, 69, 96, 0.4);
+}
+
+.final-step p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Efeitos Especiais */
+.step-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 16px;
+  background: linear-gradient(45deg, 
+    rgba(181, 106, 255, 0.1), 
+    rgba(233, 69, 96, 0.1), 
+    transparent);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover::before {
+  opacity: 1;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .step-card {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+    margin-bottom: 3rem;
+  }
+  
+  .step-card.left .step-icon-container,
+  .step-card.right .step-icon-container {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+    right: auto;
+  }
+  
+  .step-number {
+    top: -60px;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-line {
+    left: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .how-it-works {
+    padding: 4rem 1rem;
+  }
+  
+  .timeline-line {
+    display: none;
+  }
+  
+  .step-card {
+    padding: 1.2rem;
+  }
+  
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .step-content p {
+    font-size: 0.85rem;
+  }
+}

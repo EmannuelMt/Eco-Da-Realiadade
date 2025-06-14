@@ -1,0 +1,200 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  background: 
+    linear-gradient(to right, rgba(23, 11, 36, 0.95) 0%, rgba(23, 11, 36, 0.7) 100%),
+    var(--hero-image) no-repeat center center/cover;
+  color: white;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(106, 44, 173, 0.3) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(233, 69, 96, 0.2) 0%, transparent 40%);
+  z-index: -1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-title-line {
+  display: block;
+  line-height: 1.1;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.5rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.text-accent {
+  color: #b56aff;
+  background: linear-gradient(to right, #b56aff, #e94560);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 700px;
+  line-height: 1.6;
+  margin: 1.5rem 0 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 3rem 0;
+  max-width: 800px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.1rem;
+  background: rgba(35, 20, 59, 0.6);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(181, 106, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background: rgba(106, 44, 173, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(106, 44, 173, 0.3);
+}
+
+.feature-icon {
+  color: #b56aff;
+  font-size: 1.3rem;
+  display: flex;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: linear-gradient(135deg, #6a2cad 0%, #e94560 100%);
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 20px rgba(106, 44, 173, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(106, 44, 173, 0.6);
+}
+
+.hero-btn:hover::before {
+  left: 100%;
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.hero-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+/* Selo Ordem Paranormal */
+.hero-seal {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  width: 150px;
+  height: 150px;
+  background: rgba(35, 20, 59, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(181, 106, 255, 0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+.seal-inner {
+  width: 130px;
+  height: 130px;
+  border: 2px dashed #b56aff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  color: #b56aff;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 600px;
+    padding: 6rem 0;
+    text-align: center;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+  }
+  
+  .hero-features {
+    justify-content: center;
+  }
+  
+  .hero-seal {
+    display: none;
+  }
+}

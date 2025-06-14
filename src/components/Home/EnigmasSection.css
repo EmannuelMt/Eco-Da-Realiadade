@@ -1,0 +1,325 @@
+.enigmas-container {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #0f0521 0%, #1a0a2e 100%);
+  overflow: hidden;
+}
+
+.enigmas-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  line-height: 1.6;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.archive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #8A2BE2;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  background: rgba(138, 43, 226, 0.1);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.archive-link:hover {
+  background: rgba(138, 43, 226, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.1);
+}
+
+.link-icon {
+  transition: transform 0.3s ease;
+}
+
+.archive-link:hover .link-icon {
+  transform: translateX(3px);
+}
+
+.enigmas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.mystery-card {
+  position: relative;
+  background: rgba(35, 20, 59, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mystery-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.03) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: rgba(138, 43, 226, 0.1);
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.enigma-number {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background: var(--accent-color);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.difficulty-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  align-self: flex-start;
+}
+
+.category-tag {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+}
+
+.status-badge.solved {
+  background: rgba(0, 206, 209, 0.1);
+  color: #00CED1;
+  border: 1px solid rgba(0, 206, 209, 0.3);
+}
+
+.status-badge.unsolved {
+  background: rgba(138, 43, 226, 0.1);
+  color: #8A2BE2;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.card-body {
+  margin-bottom: 2.5rem;
+}
+
+.mystery-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.mystery-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.investigate-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.link-text {
+  transition: transform 0.3s ease;
+}
+
+.link-icon {
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+}
+
+.investigate-link:hover .link-icon {
+  transform: translateX(3px);
+}
+
+.card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mystery-card:hover .card-accent {
+  opacity: 1;
+}
+
+.card-decoration {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  opacity: 0.05;
+  font-size: 6rem;
+  color: white;
+  z-index: -1;
+}
+
+.cta-container {
+  text-align: center;
+}
+
+.primary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #8A2BE2 0%, #00CED1 100%);
+  box-shadow: 0 4px 20px rgba(138, 43, 226, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.primary-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+}
+
+.cta-icon {
+  transition: transform 0.3s ease;
+}
+
+.primary-cta:hover .cta-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .enigmas-container {
+    padding: 4rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .enigmas-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .mystery-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .enigmas-content {
+    padding: 0 1.5rem;
+  }
+  
+  .mystery-title {
+    font-size: 1.3rem;
+  }
+  
+  .primary-cta {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

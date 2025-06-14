@@ -1,0 +1,32 @@
+.mystery-section {
+  padding: 3rem 1rem;
+  background-color: var(--secondary-dark);
+}
+
+.mystery-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--primary-dark);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mystery-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.mystery-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.mystery-description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}

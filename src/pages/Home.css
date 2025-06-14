@@ -1,0 +1,41 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-dark); /* Fundo escuro */
+}
+
+.sections-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  background-color: var(--primary-dark); /* Fundo escuro */
+}
+
+.home-section {
+  padding: var(--section-padding);
+  position: relative;
+  border-bottom: var(--border-width) solid rgba(106, 44, 173, 0.3);
+  background-color: var(--primary-dark); /* Fundo escuro */
+}
+
+.home-section:last-child {
+  border-bottom: none;
+}
+
+/* Garante que todas as seções tenham fundo escuro */
+.hero, 
+.features-section, 
+.how-it-works, 
+.enigmas-section,
+.mystery-of-the-week,
+.testimonials,
+.featured-campaigns,
+.hall-of-fame,
+.news-updates,
+.blog-preview,
+.newsletter,
+.partners,
+.faq,
+.final-cta {
+  background-color: var(--primary-dark) !important;
+}
